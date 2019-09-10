@@ -53,6 +53,9 @@ public class Planet {
     public double calcNetForceExertedByX(Planet[] allPlanets){
     	double allforceX = 0.0;
     	for(Planet p: allPlanets){
+    		if(p.equals(this)){
+                continue;
+            }
     		allforceX += this.calcForceExertedByX(p);
     	}
     	return allforceX;
@@ -62,6 +65,9 @@ public class Planet {
     public double calcNetForceExertedByY(Planet[] allPlanets){
     	double allforceY = 0.0;
     	for(Planet p: allPlanets){
+    		if(p.equals(this)){
+                continue;
+            }
     		allforceY += this.calcForceExertedByY(p);
     	}
     	return allforceY;
