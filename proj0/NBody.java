@@ -1,4 +1,4 @@
-public class NBody {
+class NBody {
 
 	private static String starfield = "./images/starfield.jpg";
 
@@ -16,20 +16,11 @@ public class NBody {
 		In input = new In(filename);
 		int numberOfPlanets = input.readInt();
 		Planet[] planets = new Planet[numberOfPlanets];
-		for(int j=0;j<numberOfPlanets;j++){
-			planets[j] = new Planet();
-		}
 		input.readDouble();
-		int i = 0;
-		while(!input.isEmpty()){
-			planets[i].xxPos = input.readDouble();
-			planets[i].yyPos = input.readDouble();
-            planets[i].xxVel = input.readDouble();
-            planets[i].yyVel = input.readDouble();
-            planets[i].mass = input.readDouble();
-            planets[i].imgFileName = input.readString();
-            i += 1;		
-        }
+		for(int j=0;j<numberOfPlanets;j++){
+			planets[j] = new Planet(input.readDouble(),input.readDouble(),input.readDouble(),input.readDouble(),input.readDouble(),input.readString());
+		}
+		
 
         return planets;
 

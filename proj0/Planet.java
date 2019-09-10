@@ -7,7 +7,7 @@ public class Planet {
 	public double yyVel;
 	public double mass;
 	public String imgFileName;
-	static final double G = 6.67e-11;
+	private static final double G = 6.67e-11;
 
 
 	public Planet(double xP, double yP, double xV, double yV, double m, String img) {
@@ -29,14 +29,6 @@ public class Planet {
 		imgFileName = p.imgFileName;
 	}
 
-	public Planet(){
-        this.xxPos = 0;
-        this.yyPos = 0;
-        this.xxVel = 0;
-        this.yyVel = 0;
-        this.mass = 0;
-        this.imgFileName = "";
-    }
 
 	public double calcDistance(Planet target){
 		double distance = (target.xxPos - this.xxPos) * (target.xxPos - this.xxPos) + (target.yyPos - this.yyPos) * (target.yyPos - this.yyPos);
